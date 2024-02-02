@@ -1,0 +1,50 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Animals</title>
+    <style>
+        /* Add any additional styling as needed */
+        #animalList {
+            list-style-type: none;
+            padding: 0;
+        }
+        .animalItem {
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Add Animals</h1>
+    <label for="animalInput">Enter an animal:</label>
+    <input type="text" id="animalInput" />
+    <button onclick="addAnimal()">Submit</button>
+
+    <ul id="animalList">
+        <!-- Initial list item -->
+        <li class="animalItem">Dog</li>
+    </ul>
+
+    <script>
+        function addAnimal() {
+            // Get user input
+            var userInput = document.getElementById("animalInput").value;
+
+            if (userInput.trim() !== "") {
+                // Create a new list item element
+                var listItem = document.createElement("li");
+                listItem.className = "animalItem";
+                
+                // Set the text content of the list item to the user input
+                listItem.textContent = userInput;
+
+                // Append the new list item to the existing list
+                document.getElementById("animalList").appendChild(listItem);
+
+                // Clear the input field for the next entry
+                document.getElementById("animalInput").value = "";
+            }
+        }
+    </script>
+</body>
+</html>
